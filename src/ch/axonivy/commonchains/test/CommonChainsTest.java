@@ -20,6 +20,7 @@ public class CommonChainsTest {
 		Context context = new CobPageActionContext();
 		Dossier dossier = new Dossier();
 		context.put("dossier", dossier);
+		context.put("numberOfProperty", 11);
 		dossier.setSecurity(new RealSecurity());
 		dossier.getSecurity().setLandRegistryNumber("25");
         Chain forwardActionChain = new ForwardActionChain();

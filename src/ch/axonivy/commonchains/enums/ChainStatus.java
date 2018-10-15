@@ -1,5 +1,5 @@
 package ch.axonivy.commonchains.enums;
 
-public enum ChainResult {
+public enum ChainStatus {
 	CONTINUE,STOP
 }

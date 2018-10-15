@@ -4,7 +4,7 @@ import org.apache.commons.chain.Command;
 import org.apache.commons.chain.Context;
 
 import ch.axonivy.commonchains.context.CobPageActionContext;
-import ch.axonivy.commonchains.enums.ChainResult;
+import ch.axonivy.commonchains.enums.ChainStatus;
 
 public abstract class AbstractCobCommand implements Command {
 
@@ -13,10 +13,10 @@ public abstract class AbstractCobCommand implements Command {
 		if(!(context instanceof CobPageActionContext)){
 			throw new IllegalArgumentException("Context must be type of CobPageContext");
 		}
-		ChainResult chainResult = execute((CobPageActionContext)context);
-		return chainResult == ChainResult.STOP;
+		ChainStatus chainResult = execute((CobPageActionContext)context);
+		return chainResult == ChainStatus.STOP;
 	}
 	
-	public abstract ChainResult execute(CobPageActionContext context) throws Exception ;
+	public abstract ChainStatus execute(CobPageActionContext context) throws Exception ;
 
 }
